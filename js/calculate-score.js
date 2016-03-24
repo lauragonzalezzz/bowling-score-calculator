@@ -1,25 +1,37 @@
 
 function CalculateGameScore() {
-var frameArr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-
-	var frameObjs = frameArr.map(function(frame) {
-		return {
-			roll1 : 0 
-		}
-	});
-	console.log('frameObjs',frameObjs);
+var frameObjs = [];
+	
+	for (var i = 1; i < 11; i++) {
+		frameObjs.push({frame : i, roll1 : null})
+	};
 
 	function rollBall(){
-		rollScore = Math.floor(Math.random()* 10);
-		// storeScore(rollScore);
-		return rollScore;
+		rollScore = Math.floor(Math.random()* 10); 
+			
+			return rollScore;
+		}
 	}
 
-	// function storeScore(score) {
-	// 	for (var i = 0; i < frameArr.length; i++) {
-	// 		if (frameArr[i].)
-	// 	}
-	// }
+	function storeScore(score) {
+		for (var i = 0; i < frameObjs.length; i++) {
+			if (frameObjs[i].roll1 === null) {
+				frameObjs[i].roll1 = score;
+				break;
+		}
+	}
+}
+storeScore(5);
+console.log('frameObjs',frameObjs);
+
+		// frameObjs = frameObjs.map(function(frame) {
+		// 	if (frame.roll1 === null) {
+		// 		frame.roll1 = rollScore;
+		// 		console.log('frame.roll1',frame.roll1);
+		// 		return;
+		// 	}
+		// })
+
 
 
 	// var scoresOnly = frames.filter(function(frame) {
@@ -43,5 +55,8 @@ var frameArr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 	}
 }
 
-var newGame = new CalculateGameScore;
+newGame = new CalculateGameScore;
+
+console.log(newGame.rollBall());
+console.log(newGame.rollBall());
 console.log(newGame.rollBall());
